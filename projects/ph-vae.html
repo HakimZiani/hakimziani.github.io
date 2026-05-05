@@ -1,0 +1,298 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>PH-VAE: Phase-Type Variational Autoencoder</title>
+    <meta name="author" content="Hakim Ziani">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="../images/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../stylesheet.css?v=20260505">
+    <style>
+      .project-container {
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      .project-header {
+        margin-bottom: 40px;
+      }
+
+      .back-link {
+        display: inline-block;
+        margin-bottom: 20px;
+        font-size: 14px;
+      }
+
+      .project-title {
+        font-size: 38px;
+        font-weight: 700;
+        margin: 20px 0 10px 0;
+        color: #333;
+        text-align: center;
+      }
+      .project-authors {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+      .project-venue {
+        font-size: 14px;
+        color: #1772d0;
+        font-weight: 600;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      .project-abstract {
+        background: #f5f5f5;
+        padding: 20px;
+        border-left: 4px solid #1772d0;
+        margin: 25px 0;
+        border-radius: 5px;
+        text-align: left;
+      }
+      .project-abstract p {
+        font-size: 15px;
+        line-height: 1.8;
+      }
+      .project-abstract h3 {
+        font-size: 30px;
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: #333;
+        text-align: left;
+      }
+      .project-section {
+        margin: 30px 0;
+      }
+      .project-section h3 {
+        font-size: 30px;
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: #333;
+        text-align: left;
+      }
+      .project-section p {
+        line-height: 1.6;
+        color: #555;
+        margin-bottom: 12px;
+      }
+
+      .project-keywords {
+        margin: 20px 0;
+      }
+
+      .keyword-tag {
+        display: inline-block;
+        background: #e8f4f8;
+        padding: 6px 12px;
+        border-radius: 5px;
+        margin-right: 8px;
+        margin-bottom: 8px;
+        font-size: 12px;
+        color: #333;
+      }
+
+      .keyword-tag a {
+        color: #1772d0;
+        text-decoration: none;
+      }
+
+      .keyword-tag a:hover {
+        color: #f09228;
+      }
+
+      .project-links {
+        margin: 30px 0;
+        padding: 20px;
+        background: #ffffff;
+        border-radius: 8px;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .project-link {
+        padding: 10px 20px;
+        background: #1772d0;
+        color: white;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 14px;
+        transition: background 0.2s ease;
+      }
+      .project-link:hover {
+        background: #0d5a9f;
+      }
+      .project-link.secondary {
+        background: #666;
+      }
+      .project-link.secondary:hover {
+        background: #333;
+      }
+
+      .project-figure {
+        margin: 25px 0;
+        text-align: center;
+        border: none;
+        outline: none;
+      }
+      .project-figure img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
+      .project-figure-caption {
+        font-size: 12px;
+        color: #666;
+        margin-top: 10px;
+        font-style: italic;
+      }
+
+      @media (max-width: 600px) {
+        .project-container {
+          padding: 10px;
+        }
+        .project-title {
+          font-size: 28px;
+        }
+        .project-links {
+          flex-direction: column;
+        }
+        .project-link {
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="project-container">
+      <div class="back-link">
+        <a href="../index.html#projects">&larr; Back to Projects</a>
+      </div>
+
+      <div class="project-header">
+        <h1 class="project-title">PH-VAE: Phase-Type Variational Autoencoder for Modeling Heavy-Tailed Distributions</h1>
+        <div class="project-authors">Abdelhakim Ziani, Andras Horvath, Paolo Ballarini</div>
+        <div class="project-venue">International Conference on Machine Learning (<a href="https://icml.cc/2026" target="_blank">ICML 2026</a>) </div>
+      </div>
+      <div class="project-links">
+        <a href="https://arxiv.org/pdf/2603.01800" target="_blank" class="project-link">Read Full Paper (PDF)</a>
+        <a href="https://github.com/hakimziani/ph-vae" target="_blank" class="project-link secondary">Code</a>
+      </div>
+      <div class="project-abstract">
+        <h3>Summary</h3>
+        <p>
+          data appear across finance, insurance, language, networks, and many
+          risk-sensitive domains, where rare but extreme events dominate uncertainty.
+          Standard VAEs usually rely on Gaussian decoder likelihoods, which tend to
+          underestimate tails and collapse extreme values.
+        </p>
+
+        <p>
+          We propose <strong>PH-VAE</strong>, a Phase-Type Variational Autoencoder that
+          replaces the classical decoder with a latent-conditioned Phase-Type distribution,
+          defined through the absorption time of a continuous-time Markov chain. This decoder
+          composes multiple exponential time scales, giving the model a flexible and
+          analytically tractable way to learn diverse tail behaviors directly from data.
+        </p>
+
+        <p>
+          Empirically, PH-VAE outperforms Gaussian, Student-t, and extreme-value-based VAE
+          decoders on synthetic and real-world heavy-tailed benchmarks, improving tail
+          fidelity, extreme quantile estimation, and multivariate tail dependence through a
+          shared latent representation.
+        </p>
+
+      </div>
+      <div class="project-keywords">
+        <strong>Keywords:</strong>
+        <span class="keyword-tag"><a href="https://icml.cc/" target="_blank">ICML</a></span>
+        <span class="keyword-tag">Generative Models</span>
+        <span class="keyword-tag">Variational Autoencoders</span>
+        <span class="keyword-tag">Phase-Type Distributions</span>
+        <span class="keyword-tag">Heavy-Tailed Data</span>
+        <span class="keyword-tag">Probabilistic Modeling</span>
+      </div>
+
+      
+      <div class="project-section">
+      <h3>Methodology</h3>
+
+      <div class="project-figure">
+        <img src="../images/model_ph_vae.png" alt="PH-VAE Architecture Diagram">
+        <div class="project-figure-caption">PH-VAE architecture. The encoder maps inputs to a latent space, which conditions a Phase-Type decoder that generates heavy-tailed distributions.</div>
+      </div>
+
+      <p>
+        PH-VAE follows the standard Variational Autoencoder framework, where an encoder maps
+        input data to a latent variable and a decoder reconstructs the observation from this
+        latent space. Unlike classical VAEs that assume a simple Gaussian likelihood, PH-VAE
+        introduces a more expressive observation model by conditioning the decoder on the
+        latent variable to generate flexible distributions. The model is trained by maximizing
+        the Evidence Lower Bound (ELBO), balancing reconstruction accuracy with latent
+        regularization.
+      </p>
+      <div class="project-figure">
+        <img src="../images/ph.png" alt="Phase-Type Distribution Example" style="max-width: 25%; height: auto;">
+        <div class="project-figure-caption">Example of a Phase-Type Distribution</div>
+        </div>
+      <p>
+        The key innovation lies in the use of Phase-Type distributions as the decoder
+        likelihood. Each data dimension is modeled as the absorption time of a continuous-time
+        Markov chain, allowing the model to represent complex, heavy-tailed behaviors through
+        a composition of exponential time scales. This design enables PH-VAE to accurately
+        capture both typical values and extreme events, while dependencies between variables
+        are naturally induced through the shared latent representation.
+      </p>
+    </div>
+      
+    <div class="project-section">
+        <h3>Results</h3>
+        <p>
+          We evaluate PH-VAE on synthetic datasets with known heavy-tailed distributions and
+          real-world benchmarks from finance and insurance. PH-VAE consistently outperforms
+          Gaussian, Student-t, and extreme-value-based VAE decoders in terms of tail fidelity,
+          extreme quantile estimation, and multivariate tail dependence. The results demonstrate
+          that PH-VAE can effectively learn complex tail behaviors while maintaining a compact
+          latent representation.
+        </p>
+
+
+        <div class="project-figure">
+        <img src="../images/result_weibull.png" alt="PH-VAE Architecture Diagram">
+        <div class="project-figure-caption">Synthetic Weibull data: true samples, Gaussian VAE generations, and PH-VAE generations.</div>
+        </div>
+        
+
+
+      
+
+      <div class="project-section">
+        <h3>Citation</h3>
+        <pre style="background: #f5f5f5; padding: 15px; border-radius: 5px; overflow-x: auto; font-size: 12px;">
+  @misc{ziani2026phasetypevariationalautoencodersheavytailed,
+      title={Phase-Type Variational Autoencoders for Heavy-Tailed Data}, 
+      author={Abdelhakim Ziani and András Horváth and Paolo Ballarini},
+      year={2026},
+      eprint={2603.01800},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2603.01800}, 
+  }
+    </pre>
+      </div>
+      <div class="project-links">
+        <a href="https://arxiv.org/pdf/2603.01800" target="_blank" class="project-link">Read Full Paper (PDF)</a>
+        <a href="https://github.com/hakimziani/ph-vae" target="_blank" class="project-link secondary">Code</a>
+      </div>
+      <div class="project-section">
+        <h3>Contact</h3>
+        <p>
+          For questions about this work, please contact: <a href="mailto:hakim.ziani@centralesupelec.fr">hakim.ziani@centralesupelec.fr</a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,365 @@
+<!DOCTYPE HTML>
+<!-- This tells the browser this is an HTML5 document -->
+<html lang="en">
+  <head>
+    <!-- HEAD section contains information ABOUT the page (not displayed on page) -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- This sets the character encoding to UTF-8 (supports all languages) -->
+
+    <title>Hakim ZIANI</title>
+    <!-- This title appears in the browser tab -->
+
+    <meta name="author" content="Your Name">
+    <!-- Metadata: who created this page -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- This makes the website responsive on mobile devices -->
+    
+    <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
+    <!-- This is the small icon that appears in the browser tab -->
+    
+    <link rel="stylesheet" type="text/css" href="stylesheet.css?v=20260505">
+    <!-- This links the CSS file which controls the styling/colors/fonts -->
+    
+    <style>
+      .projects-section {
+        width: 100%;
+        padding: 20px 0;
+      }
+
+      .projects-section h3 {
+        text-align: left;
+        font-size: 22px;
+        margin-bottom: 30px;
+      }
+
+      .projects-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .project-card {
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 20px;
+        background: #fafafa;
+        transition: box-shadow 0.3s ease, transform 0.3s ease;
+        cursor: pointer;
+        display: flex;
+        gap: 20px;
+      }
+
+      .project-card:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        transform: translateY(-3px);
+      }
+
+      .card-logo {
+        width: 120px;
+        height: 120px;
+        min-width: 120px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+        font-size: 48px;
+        font-family: 'Lato', Verdana, Helvetica, sans-serif;
+      }
+
+      .card-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .card-title {
+        font-size: 16px;
+        font-weight: 700;
+        margin: 0 0 8px 0;
+        color: #333;
+      }
+
+      .card-venue {
+        font-size: 13px;
+        color: #1772d0;
+        margin-bottom: 10px;
+        font-weight: 500;
+      }
+
+      .card-keywords {
+        font-size: 12px;
+        margin: 10px 0;
+        flex-grow: 1;
+      }
+
+      .keyword {
+        display: inline-block;
+        background: #e8f4f8;
+        padding: 4px 8px;
+        border-radius: 4px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        font-size: 11px;
+      }
+
+      .keyword a {
+        color: #1772d0;
+        text-decoration: none;
+      }
+
+      .keyword a:hover {
+        color: #f09228;
+      }
+
+      .card-links {
+        margin-top: 12px;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .card-link {
+        padding: 6px 12px;
+        background: #1772d0;
+        color: white;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 12px;
+        transition: background 0.2s ease;
+      }
+
+      .card-link:hover {
+        background: #0d5a9f;
+      }
+
+      @media (max-width: 600px) {
+        .project-card {
+          flex-direction: column;
+          gap: 15px;
+        }
+
+        .card-logo {
+          width: 100%;
+          height: 80px;
+        }
+      }
+    </style>
+    
+  </head>
+
+  <body>
+    <!-- BODY section contains everything visible on the page -->
+    
+    <!-- Main container table - creates the centered layout with max-width of 800px -->
+    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+      <tr style="padding:0px">
+        <td style="padding:0px">
+          
+          <!-- PROFILE SECTION TABLE - Contains your name, bio, and links -->
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr style="padding:0px">
+              <!-- LEFT COLUMN - 63% width for text content -->
+              <td style="padding:2.5%;width:63%;vertical-align:middle">
+                <!-- Your name heading -->
+                <p class="name" style="text-align: center;">
+                  Hakim Ziani
+                </p>
+                
+                <!-- Your biography/introduction -->
+                <p>
+                  International PhD researcher (Cotutelle, <a href="https://www.centralesupelec.fr/" target="_blank">CentraleSupélec Paris</a> &amp; <a href="https://www.unito.it/" target="_blank">University of Turin</a>)
+                  specializing in generative models for heavy-tailed data. Work published at international
+                  venues(ICML, EPEW...); reviewer at <a href="ICML.cc">ICML</a> and <a href="https://neurips.cc/">NeurIPS</a>. Previously a Data Scientist at <a href="https://kilowattsol.com/" target="_blank">KilowattSol</a>, building predictive maintenance models for photovoltaic infrastructure and deploying data-driven solutions across R&D and engineering teams.
+                </p>
+                
+                <!-- Contact links - Email, CV, Projects, LinkedIn -->
+                <!-- &nbsp; adds spaces between links, / is a separator -->
+                <p style="text-align:center">
+                  <a href="mailto:hakim.ziani@centralesupelec.fr">Email</a> &nbsp;/&nbsp;
+                  <!-- Links to your email address -->
+                  <a href="data/my_resume%20(14).pdf" target="_blank">CV</a> &nbsp;/&nbsp;
+                  <!-- Link to your CV PDF file -->
+                  <a href="#projects">Projects</a> &nbsp;/&nbsp;
+                  <!-- Link to projects section -->
+                  <a href="https://www.linkedin.com/in/hakim-ziani/">LinkedIn</a> &nbsp;/&nbsp;
+
+                  <a href="https://github.com/HakimZiani">Github</a>
+                  <!-- Link to your LinkedIn profile -->
+                </p>
+              </td>
+              
+              <!-- RIGHT COLUMN - 37% width for profile image -->
+              <td style="padding:2.5%;width:37%;max-width:37%">
+                <!-- Profile image with circular style (border-radius: 50%) -->
+                <!-- object-fit: cover makes it fill the circle without distortion -->
+                <img style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="profile photo" src="images/square_pro_image_happy.png">
+              </td>
+            </tr>
+          </tbody></table>
+          
+          <!-- SECTION HEADER TABLE - For main content sections like "Research", "Projects", etc. -->
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+              <tr>
+              <td style="padding:16px;width:100%;vertical-align:middle">
+                <!-- Section heading -->
+                <h2 style="text-align:left;margin-bottom:45px;">Focus</h2>
+                  <p>
+                      
+                      <ul>
+                        <li><strong>Generative Models</strong></li>
+                        <li><strong>Probabilistic Modeling</strong></li>
+                        <li><strong>Heavy-Tailed Data</strong></li>
+                      </ul>
+                      
+                      I am currently exploiting Markov Chain based Phase-Type distributions to develop novel generative models and probabilistic tools for modeling heavy-tailed data and extreme events,
+                      with applications in machine learning, time series anomaly detection and forecasting. 
+                    </p>
+                  <p>
+                      I am also maintaining <a href="https://github.com/HakimZiani/phdist"> <strong>phdist</strong></a> an open-source Python library for Phase-Type distributions in deep learning and probabilistic modeling.
+                  </p>
+
+
+
+
+
+
+
+                  <h2 style="text-align: left;margin-bottom:45px;margin-top:45px;">Experience</h2>
+
+                  <p>
+                  Before my PhD, I worked as a <strong>Data Scientist at KilowattSol</strong>,
+                  where I designed and deployed predictive models for photovoltaic infrastructure.
+                  My work covered soiling ratio forecasting, brownfield and greenfield yield prediction,
+                  and AI-driven planning tools, with a focus on delivering actionable insights for
+                  real-world energy systems. I also developed and deployed dashboards to support
+                  decision-making for engineering and operations teams.
+                  </p>
+
+                  <p>
+                  Alongside my research, I teach <strong>Python programming</strong> to engineering students at
+                  CentraleSupélec as part of the Coding Weeks program. I mentor students through
+                  end-to-end projects, from problem formulation to implementation, debugging, and code review.
+                  </p>
+
+                  <h2 style="text-align: left;margin-bottom:45px;margin-top:45px;">Activities</h2>
+
+                  <p>
+                  My research focuses on generative modeling and probabilistic methods for complex data.
+                  I have contributed to international venues and serve as a reviewer for leading AI conferences,
+                  including <strong>ICML 2026</strong>, <strong>NeurIPS 2026</strong>, and <strong>XAI 2026</strong>.
+                  </p>
+
+                  <p>
+                  I am also actively involved in academic service, including reviewing, mentoring,
+                  and contributing to the organization of scientific events.
+                  </p>
+
+
+                  
+
+
+                </p>
+              </td>
+            </tr>
+          </tbody></table>
+          
+          <!-- PROJECTS SECTION - Projects displayed as cards -->
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+              <td style="padding:16px;width:100%;vertical-align:middle">
+                <div id="projects" class="projects-section">
+                  <h2 style="text-align: left;">Projects</h2>
+                  <br>
+                  <div class="projects-grid">
+                    
+                    <!-- PH-VAE Paper -->
+                    <div class="project-card" onclick="window.location.href='projects/ph-vae.html'">
+                      <div class="card-logo" id="logo-0">𝝱</div>
+                      <div class="card-content">
+                        <div class="card-title">PH-VAE: Phase-Type Variational Autoencoder</div>
+                        <div class="card-venue"><a href="https://icml.cc/" target="_blank">International Conference on Machine Learning</a></div>
+                        <div class="card-keywords">
+                          <span class="keyword"><a href="https://icml.cc/" target="_blank" onclick="event.stopPropagation()">ICML</a></span>
+                          <span class="keyword">Generative Models</span>
+                          <span class="keyword">Heavy-Tailed Data</span>
+                        </div>
+                        <div class="card-links">
+                          <a href="projects/ph-vae.html" class="card-link" onclick="event.stopPropagation()">Project</a>
+                          <a href="#" class="card-link" onclick="event.stopPropagation()">Paper</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- phdist Paper -->
+                    <div class="project-card" onclick="window.location.href='projects/phdist.html'">
+                      <div class="card-logo" id="logo-1">📦</div>
+                      <div class="card-content">
+                        <div class="card-title">phdist: Phase-Type Distributions Library</div>
+                        <div class="card-venue">Open-Source Python Library</div>
+                        <div class="card-keywords">
+                          <span class="keyword">Python</span>
+                          <span class="keyword">Deep Learning</span>
+                          <span class="keyword">PyTorch</span>
+                        </div>
+                        <div class="card-links">
+                          <a href="projects/phdist.html" class="card-link" onclick="event.stopPropagation()">Project</a>
+                          <a href="https://github.com/hakimziani/phdist" class="card-link" target="_blank" onclick="event.stopPropagation()">GitHub</a>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    
+
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody></table>
+          <h3>More Links</h3>
+
+                  <p>
+                    You can find more about my work on
+                    <a href="https://github.com/hakimziani" target="_blank">GitHub</a>,
+                    <a href="https://linkedin.com/in/hakim-ziani" target="_blank">LinkedIn</a>,
+                    and
+                    <a href="https://scholar.google.com/citations?user=wIbPY1gAAAAJ" target="_blank">
+                      Google Scholar
+                    </a>.
+                  </p>
+          <!-- FOOTER TABLE - Bottom of page content -->
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+              <td style="padding:0px">
+                <br>
+                <!-- <br> adds a line break (empty space) -->
+                <p style="text-align:right;font-size:small;">
+                  <!-- Add footer text here (small text aligned to the right) -->
+                </p>
+              </td>
+            </tr>
+          </tbody></table>
+        </td>
+      </tr>
+    </table>
+
+    <script>
+      // Generate random gradient colors for logos
+      const colors = [
+        ['#667eea', '#764ba2'],
+        ['#f093fb', '#f5576c'],
+        ['#4facfe', '#00f2fe'],
+        ['#43e97b', '#38f9d7'],
+        ['#fa709a', '#fee140'],
+        ['#30cfd0', '#330867'],
+        ['#a8edea', '#fed6e3'],
+        ['#ff9a9e', '#fecfef']
+      ];
+
+      document.querySelectorAll('.card-logo').forEach((logo, index) => {
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        logo.style.background = `linear-gradient(135deg, ${randomColor[0]} 0%, ${randomColor[1]} 100%)`;
+      });
+    </script>
